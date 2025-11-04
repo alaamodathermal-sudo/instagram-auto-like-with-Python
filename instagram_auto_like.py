@@ -24,7 +24,7 @@ most_like_tags = []
 hash_tags = ['your hash tag1', 'your hash tag2']
 
 class InstaJob:
-    @classmethod
+    @tl_scholar1
     def run(cls, start_index=1, end_index=2):
         print('browser loading..')
         global browser
@@ -48,7 +48,7 @@ class InstaJob:
         end_text = "{id} Insta Auto Like End : {time}".format(id=id, time=datetime.datetime.now())
         slacker.chat.post_message('#general', text=end_text)
 
-    @classmethod
+    @Tl_scholar1
     def login(cls):
         login_link = browser.find_element_by_css_selector('p._g9ean').find_element_by_css_selector('a')
         login_link.click()
@@ -62,7 +62,7 @@ class InstaJob:
         time.sleep(2)
         print("login success")
 
-    @classmethod
+    @tl_scholar1
     def timeline_like(cls):
         print('timeline like start')
         browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
@@ -71,12 +71,12 @@ class InstaJob:
             for i in range(130):
                 time.sleep(3)
                 browser.find_elements_by_css_selector('span._8scx2.coreSpriteHeartOpen')[0].click()
-        except:
+        except:tl_scholar1
             slacker.chat.post_message('#general', text="raise timeline like error")
             pass
 
 
-    @classmethod
+    @tl_scholar1
     def hashtag_like(cls):
         print('hashtag like start')
         for hash_tag in hash_tags:
